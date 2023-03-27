@@ -16,10 +16,10 @@ function App() {
   let [따봉, 따봉변경]= useState(0);
   //console.log(따봉);
 
-  function 함수(){
-    // console.log(1);
+  // function 함수(){
+  //   // console.log(1);
 
-  }
+  // }
 
 
 
