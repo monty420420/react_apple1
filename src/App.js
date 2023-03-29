@@ -19,6 +19,9 @@ function App() {
   // function 함수(){
   //   // console.log(1);
   // }
+
+  
+
   return (
     <div className="App">
       <div className='black-nav'>
@@ -30,8 +33,6 @@ function App() {
       <button onClick={()=> {
         let copy = [...글제목];
         copy[0] = '노인코트 추천';
-        
-        let copy2 = [...글제목];
         copy[1] = '할머니 코트';
 
         글제목이다(copy);
@@ -58,8 +59,22 @@ function App() {
       <p>2월 17일 발행</p>
       </div>
       
+      <Modal></Modal>
+
+
+
     </div>
   );
+}
+
+function Modal(){
+  return (
+    <div className='modal'>
+    <h4>제목</h4>
+    <p>날짜</p>
+    <p>상세내용</p>
+</div>
+  )
 }
 
 export default App;
