@@ -14,11 +14,17 @@ function App() {
   let[글제목, 글제목이다] = useState([ '남자코트 추천','여자코트 추천','가어린이 코트 추천' ]);
   
   let [따봉, 따봉변경]= useState(0);
+  let [openModal, setOpenModal] = useState(0);
+  let [closeModal, setCloseModal] = useState(1);
+
   //console.log(따봉);
 
   // function 함수(){
   //   // console.log(1);
   // }
+  
+  
+    
 
   
 
@@ -59,8 +65,11 @@ function App() {
       <p>2월 17일 발행</p>
       </div>
       
-      <Modal></Modal>
+      <button onClick={()=>setOpenModal(!openModal)}>모달</button>
 
+      {
+        openModal == 0 ? <Modal/> : null
+      }
 
 
     </div>
