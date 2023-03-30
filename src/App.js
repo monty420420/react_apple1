@@ -15,7 +15,6 @@ function App() {
   
   let [따봉, 따봉변경]= useState(0);
   let [openModal, setOpenModal] = useState(0);
-  let [closeModal, setCloseModal] = useState(1);
 
   //console.log(따봉);
 
