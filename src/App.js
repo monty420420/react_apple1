@@ -51,7 +51,7 @@ function App() {
         수정버튼
       </button>
          
-      <div className='list'>
+      {/* <div className='list'>
       <h4>{글제목[0]} <span onClick={() => 따봉변경(따봉+1) }>👍</span> {따봉} </h4>
       <p>2월 17일 발행</p>
       </div>
@@ -62,13 +62,30 @@ function App() {
       <div className='list'>
       <h4>{글제목[2]}</h4>
       <p>2월 17일 발행</p>
-      </div>
+      </div> */}
+      
+      {
+         글제목.map(function(a,i){
+          return(
+            <div className='list' key={i}>  
+                <h4>{글제목[i]} <span onClick={() => 따봉변경(따봉+1) }>👍</span> {따봉}</h4>
+                <p>2월 17일 발행</p>
+            </div>
+          )
+         })
+      }
       
       <button onClick={()=>setOpenModal(!openModal)}>모달</button>
 
       {
         openModal == 0 ? <Modal/> : null
       }
+
+      {/* {
+        [1,2,3].map(function(){
+          return <div>안녕</div>
+        })
+      } */}
 
 
     </div>
