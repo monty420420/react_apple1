@@ -5,19 +5,25 @@
 div {
   box-sizing: border-box;
 }
+
 .list {
   padding-left: 20px;
   text-align: left;
   border-bottom: 1px solid grey;
 }
+.list_name {
+  cursor: pointer;
+}
 
+h4{
+  cursor: pointer;
+}
 .modal {
   margin-top: 20px;
   padding: 20px;
   background: #eee;
   text-align: left;
 }
-
 
 .black-nav {
   display: flex;
@@ -37,7 +43,6 @@ div {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -60,4 +65,4 @@ div {
   to {
     transform: rotate(360deg);
   }
-}
+}/*# sourceMappingURL=App.css.map */

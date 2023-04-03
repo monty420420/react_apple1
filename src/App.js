@@ -14,7 +14,8 @@ function App() {
   let[글제목, 글제목변경] = useState([ '남자코트 추천','여자코트 추천','가어린이 코트 추천' ]);
   
   let [따봉, 따봉변경]= useState([0,0,0]);
-  let [openModal, setOpenModal] = useState(0);
+  let [openModal, setOpenModal] = useState(true);
+  let [title, setTitle] = useState(0);
 
   
 
@@ -57,21 +58,26 @@ function App() {
          글제목.map(function(a,i){
           return(
             <div className='list' key={i}>  
-                <h4>{글제목[i]} <span onClick={() => {
+                <h4 className='list_title' onClick={()=>{{setOpenModal(false)}; setTitle(i) }}
+                >{글제목[i]} <span onClick={() => {
                   let 따봉카피 = [...따봉]; //따봉카피라는 변수를 만들어 따봉을 깊은복사한다
                   따봉카피[i] = 따봉카피[i] +1; //버튼이 클릭되었을때 따봉카피배열에 1을 더한다
-                  따봉변경(따봉카피) //set에 변경된 따봉카피를저장한다
+                  따봉변경(따봉카피); //set에 변경된 따봉카피를저장한다
                 } }>👍</span> {따봉[i]}</h4>
                 <p>2월 17일 발행</p>
             </div>
           )
          })
       }
+
+      <button onClick={()=>{ setTitle(0)}}>글제목0</button>
+      <button onClick={()=>{ setTitle(1)}}>글제목1</button>
+      <button onClick={()=>{ setTitle(2)}}>글제목2</button>
       
       <button onClick={()=>setOpenModal(!openModal)}>모달</button>
 
       {
-        openModal == 0 ? <Modal 글제목변경props={글제목변경} 글제목props={글제목} color="yellow"/> : null/*1. openmodal이 0이면 보여주기 아니면 null처리
+        openModal == 0 ? <Modal title변경={title} 글제목변경props={글제목변경} 글제목props={글제목} color="yellow"/> : null/*1. openmodal이 0이면 보여주기 아니면 null처리
                                                                                                         2. modal컴포넌트에 props전달 */
       }
 
@@ -82,7 +88,7 @@ function App() {
 function Modal(props){
   return (
     <div className='modal' style={{background : props.color}}>
-    <h4>{props.글제목props[0]}</h4>
+    <h4>{props.글제목props[props.title변경]}</h4>
     <p>날짜</p>
     <p>상세내용</p>
     <button onClick={()=> {
